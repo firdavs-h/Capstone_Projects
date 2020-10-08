@@ -33,6 +33,13 @@ public class Product {
 	}
 	
 	//setters
-	//dispense method
+	
+	public void dispense(int qty) {
+		if(qty<=quantity) {
+		this.quantity-=qty;
+		}else {
+			System.out.println("Not enough quatity left");
+		}
+	}
       
 }
