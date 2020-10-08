@@ -12,7 +12,7 @@ public class VendingMachineTests {
 	public void display_items_is_properly_displayed() {
 		VendingMachine vending = new VendingMachine();
 		List<String> expected = new ArrayList<>();
-		expected.add("A1| Potato Crisps|3.05|Chip");
+		expected.add("A1|Potato Crisps|3.05|Chip");
 		expected.add("B1|Stackers|1.45|Chip");
 		List<String> actual = vending.displayInventory();
 		Assert.assertEquals(expected, actual);
