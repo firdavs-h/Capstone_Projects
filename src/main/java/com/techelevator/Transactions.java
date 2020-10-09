@@ -32,7 +32,7 @@ public class Transactions extends CurrentBalance {
 			try (PrintWriter pw = new PrintWriter(new FileWriter(transactionLog, true))) {
 				pw.println("DateTime  \t|Product\t|Slot|Balance Before|Balance After");
 
-			}
+			}  
 
 		}
 		try(PrintWriter pw = new PrintWriter(new FileWriter(transactionLog, true))) {
