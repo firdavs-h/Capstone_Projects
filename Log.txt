@@ -1,9 +1,9 @@
-DateTime	|Product	|Slot|AmountAccepted|Balance
-10-09-2020 01:00 PM | Cowtales | B2 | 0.0 | -1.5
-10-09-2020 01:08 PM | Cowtales | B2 | 0.0 | -1.5
-10-09-2020 01:11 PM | Cowtales | B2 | 0.0 | -1.5
-10-09-2020 01:13 PM | Triplemint | D4 | 0.0 | -0.75
-10-09-2020 01:13 PM | Triplemint | D4 | 0.0 | -0.75
-10-09-2020 01:13 PM | Triplemint | D4 | 0.0 | -0.75
-10-09-2020 01:13 PM | Triplemint | D4 | 0.0 | -0.75
-10-09-2020 01:14 PM | Triplemint | D4 | 0.0 | -0.75
+DateTime  	|Product	|Slot|Balance Before|Balance After
+10-09-2020 03:48 PM FEED  MONEY:  0.0 5.00
+10-09-2020 03:48 PM Potato Crisps A1 5.0 5.00
+10-09-2020 03:48 PM GIVE  CHANGE:  1.95 0.00
+10-09-2020 03:50 PM FEED  MONEY:  0.0 1.00
+10-09-2020 03:50 PM FEED  MONEY:  1.0 2.00
+10-09-2020 03:50 PM FEED  MONEY:  2.0 12.00
+10-09-2020 03:50 PM Potato Crisps A1 12.0 8.95
+10-09-2020 03:50 PM GIVE  CHANGE:  8.95 0.00
