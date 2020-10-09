@@ -2,9 +2,13 @@ package com.techelevator;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Inventory {
 
@@ -51,5 +55,6 @@ public class Inventory {
 		return inventoryMap.get(location).getProductQuantity();
 		
 	}
+
 
 }
