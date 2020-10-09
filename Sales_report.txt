@@ -8,7 +8,7 @@ Little League Chew|0.0
 Wonka Bar|0.0
 Crunchie|0.0
 Moonpie|0.0
-Potato Crisps|3.05
+Potato Crisps|0.0
 Triplemint|0.0
 Mountain Melter|0.0
 U-Chews|0.0

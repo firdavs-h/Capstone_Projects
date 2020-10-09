@@ -10,11 +10,10 @@ import java.util.Scanner;
 public class Sales extends Inventory {
 	
 	private Map<String, Double> salesMap = new HashMap<String, Double>();
-	//private Inventory currentInvetory=new Inventory();
+	private Inventory currentInvetory=new Inventory();
 
 	public Sales() {
-		
-		
+		setSales();
 	}
 	
 	public void setSales() {
@@ -34,7 +33,7 @@ public class Sales extends Inventory {
 		try(FileWriter fileWrite =new FileWriter(report,true)){
 		for (String key: salesMap.keySet()) {
 			fileWrite.write(key+"|"+salesMap.get(key)+"\n");
-			//System.out.println(key+"|"+salesMap.get(key));
+			System.out.println(key+"|"+salesMap.get(key));
 		}
 			
 		} catch (IOException e) {

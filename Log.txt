@@ -1,0 +1,9 @@
+DateTime  |Product|Slot|AmountAccepted|Balance
+10-09-2020 01:00 PM | Cowtales | B2 | 0.0 | -1.5
+10-09-2020 01:08 PM | Cowtales | B2 | 0.0 | -1.5
+10-09-2020 01:11 PM | Cowtales | B2 | 0.0 | -1.5
+10-09-2020 01:13 PM | Triplemint | D4 | 0.0 | -0.75
+10-09-2020 01:13 PM | Triplemint | D4 | 0.0 | -0.75
+10-09-2020 01:13 PM | Triplemint | D4 | 0.0 | -0.75
+10-09-2020 01:13 PM | Triplemint | D4 | 0.0 | -0.75
+10-09-2020 01:14 PM | Triplemint | D4 | 0.0 | -0.75

@@ -53,4 +53,10 @@ public class Transactions extends CurrentBalance {
 			return "Amount not accepted. Please only feed whole dollar amounts into the vending machine.";
 		}
 	}
+	
+	public void payment(double price) {
+		setBalance(-1 * price);
+	}
+	
+	
 }

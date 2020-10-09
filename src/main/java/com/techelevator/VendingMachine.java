@@ -14,12 +14,12 @@ import java.util.HashMap;
 
 public class VendingMachine {
 	//Map<String, Inventory> itemList = new HashMap<>();
-	Transactions log =new Transactions()
+	Transactions log =new Transactions();
 	Scanner myScan=new Scanner(System.in);
-    private Inventory inventory=new Inventory();
-    CurrentBalance balance =new CurrentBalance();
+    private Sales inventory=new Sales();
+    Transactions balance = new Transactions();
 	public VendingMachine() {
-
+		
 	}
 
 
@@ -38,10 +38,10 @@ public class VendingMachine {
 		if(inventory.getPrice(location) <= balance.getBalance()) {
 			inventory.getProduct(location).dispense();
 			log.printTransaction(inventory.getName(location), location,  inventory.getPrice(location));  
-				
-			
+			balance.payment(inventory.getPrice(location));
+			inventory.recordSale(location);
 				return "You have purchased 1 " + inventory.getName(location) + ".";
-			
+				
 		} else {
 			return "The cost of this item exceeds your current balance";
 		}
@@ -69,7 +69,8 @@ public class VendingMachine {
 		String input;
 		System.out.println("(1) Feed Money\n" + 
 				"(2) Select Product\n" + 
-				"(3) Finish Transaction");
+				"(3) Finish Transaction \n"
+				+ "\tCurrent money provided: " + balance.displayBalance()); 
 		input=myScan.nextLine();
 		boolean validInput=(input.equals("1")||input.equals("2")||input.equals("3"));
 		while(!validInput) {
@@ -83,5 +84,21 @@ public class VendingMachine {
 	public void displayMenu() {
 		inventory.displayInventory();
 		
+	}
+	
+	public void feedMoneyExt() {
+		System.out.println("Enter bills: ");
+		String input = myScan.nextLine();
+		int output = Integer.parseInt(input);
+		balance.feedMoney(output);
+	}
+	
+	public void changeMachine() {
+		System.out.println("Your change is: " + balance.change() + "\n Your current balance is: " + balance.displayBalance());
+		
+	}
+	
+	public void reportDatSales() {
+		inventory.printSales();
 	}
 }
