@@ -8,13 +8,14 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.HashMap;
 
 public class VendingMachine {
 	Map<String, Inventory> itemList = new HashMap<>();
 	private int totalSales = 0;
-	
+	Scanner myScan=new Scanner(System.in);
 
 	public VendingMachine() {
 
@@ -33,7 +34,7 @@ public class VendingMachine {
 		}
 		if(currentItem.getPrice(location) < t.getBalance()) {
 			t.printTransaction(currentItem.getName(location), location, (int) currentItem.getPrice(location));  
-				updateQuantity.dispense(1);
+				updateQuantity.dispense();
 				totalSales += currentItem.getPrice(location);
 				return "You have purchased 1 " + currentItem.getName(location) + ".";
 			
@@ -43,6 +44,22 @@ public class VendingMachine {
 		
 		
 		
+	}
+	
+	public String mainManu() {
+		String input;
+		System.out.println("(1) Display Vending Machine Items\n" + 
+				"(2) Purchase\n" + 
+				"(3) Exit");
+		input=myScan.nextLine();
+		boolean validInput=(input.equals("1")||input.equals("2")||input.equals("3")||input.equals("4"));
+		while(!validInput) {
+		
+			System.out.println("Please select 1, 2 or 3");
+			input=myScan.nextLine();
+			validInput=(input.equals("1")||input.equals("2")||input.equals("3")||input.equals("4"));
+		}
+		return input;
 	}
 	
 }
