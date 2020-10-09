@@ -20,19 +20,25 @@ public class VendingMachine {
 		double preBalance = balance.getBalance();
 		System.out.println("Please enter slot#: ");
 		String location = myScan.nextLine().toUpperCase();
+		if (slotCheck(location)) {
 
-		if (inventory.getQuantity(location) == 0) {
-			return "There are no more left.";
-		}
-		if (inventory.getPrice(location) <= balance.getBalance()) {
-			inventory.getProduct(location).dispense();
-			balance.payment(inventory.getPrice(location));
-			log.printTransaction(inventory.getName(location), location, balance.displayBalance(), preBalance);
-			inventory.recordSale(location);
-			return "You have purchased 1 " + inventory.getName(location) + flavorText(location);
+			if (inventory.getQuantity(location) == 0) {
+				return "There are no more left.";
+			}
+			if (inventory.getPrice(location) <= balance.getBalance()) {
+				inventory.getProduct(location).dispense();
+				balance.payment(inventory.getPrice(location));
+				log.printTransaction(inventory.getName(location), location, balance.displayBalance(), preBalance);
+				inventory.recordSale(location);
+				return "You have purchased 1 " + inventory.getName(location) + flavorText(location);
 
+			} else {
+				return "The cost of this item exceeds your current balance";
+			}
 		} else {
-			return "The cost of this item exceeds your current balance";
+
+		
+			return "Invalid slot number";
 		}
 
 	}
@@ -109,7 +115,6 @@ public class VendingMachine {
 		Set<String> slots = new TreeSet<String>(inventory.getInventoryMap().keySet());
 		boolean slotExist = true;
 		if (!(slots.contains(location))) {
-			System.out.println("Invalid slot number");
 			slotExist = false;
 		}
 		return slotExist;
