@@ -42,7 +42,7 @@ public class Transactions extends CurrentBalance {
 			pw.print(itemName + " | ");
 			pw.print(itemLocation + " | ");
 			pw.print(getBalance() + " | ");
-			pw.println(balance - itemPrice);
+			pw.println(getBalance() - itemPrice);
 		}
 	}
 	public String feedMoney(int amount) {
