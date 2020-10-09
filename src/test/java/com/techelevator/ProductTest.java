@@ -15,10 +15,15 @@ public class ProductTest {
 		Assert.assertEquals("chip", testProduct.getProductType());
 		Assert.assertEquals(1.25, testProduct.getProductPrice(),0);
 		Assert.assertEquals(5, testProduct.getProductQuantity());
-		testProduct.dispense(3);
-		Assert.assertEquals(2, testProduct.getProductQuantity());
-		testProduct.dispense(4);
-		Assert.assertEquals(2, testProduct.getProductQuantity());
+		testProduct.dispense();
+		testProduct.dispense();
+		testProduct.dispense();
+		testProduct.dispense();
+		Assert.assertEquals(1, testProduct.getProductQuantity());
+		testProduct.dispense();
+		Assert.assertEquals(0, testProduct.getProductQuantity());
+		testProduct.dispense();
+		Assert.assertEquals(0, testProduct.getProductQuantity());
 	}
 
 }

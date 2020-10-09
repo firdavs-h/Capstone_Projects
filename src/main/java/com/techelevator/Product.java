@@ -34,9 +34,9 @@ public class Product {
 	
 	//setters
 	
-	public void dispense(int qty) {
-		if(qty<=quantity) {
-		this.quantity-=qty;
+	public void dispense() {
+		if(quantity>0) {
+		this.quantity--;
 		}else {
 			System.out.println("Not enough quatity left");
 		}

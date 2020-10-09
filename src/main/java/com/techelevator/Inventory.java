@@ -13,10 +13,10 @@ public class Inventory {
 
 	private Product product;
 	private List<String> keySetOrder = new ArrayList<String>();
-	private Map<String, Product> inventoryMap = new HashMap<String, Product>();
+	public Map<String, Product> inventoryMap = new HashMap<String, Product>();
 
 	public Inventory() {
-
+       setInventory();
 	}
 
 	public void setInventory() {
