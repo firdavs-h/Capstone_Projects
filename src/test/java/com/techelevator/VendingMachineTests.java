@@ -13,18 +13,18 @@ public class VendingMachineTests {
 
 
 	@Test
-	public void mainManu_various_tests() {
+	public void mainMenu_various_tests() {
 		//input 1,2,3 or 4 in Scanner should return 1,2,3 or 4 
-		boolean testInputs=(testVendingMachine.mainManu().equals("1") || testVendingMachine.mainManu().equals("2") ||
-				testVendingMachine.mainManu().equals("3") || testVendingMachine.mainManu().equals("4"));
+		boolean testInputs=(testVendingMachine.mainMenu().equals("1") || testVendingMachine.mainMenu().equals("2") ||
+				testVendingMachine.mainMenu().equals("3") || testVendingMachine.mainMenu().equals("4"));
 		
 		Assert.assertEquals(true, testInputs);
 	}
 	@Test
-	public void purchaseManu_various_tests() {
+	public void purchaseMenu_various_tests() {
 		//input 1,2 or 3in Scanner should return 1,2 or 3 
-		boolean testInputs=(testVendingMachine.purchaseManu().equals("1") || testVendingMachine.purchaseManu().equals("2") ||
-				testVendingMachine.purchaseManu().equals("3"));
+		boolean testInputs=(testVendingMachine.purchaseMenu().equals("1") || testVendingMachine.purchaseMenu().equals("2") ||
+				testVendingMachine.purchaseMenu().equals("3"));
 		
 		Assert.assertEquals(true, testInputs);
 	}
