@@ -23,7 +23,7 @@ public class VendingMachine {
 
 	
 		
-	} 
+	
 	public String purchase(CurrentBalance b, String location) {
 		return null;
 	}

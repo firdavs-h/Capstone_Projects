@@ -7,13 +7,10 @@ import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Transactions {
-	CurrentBalance balance;
+public class Transactions extends CurrentBalance {
+	private int balance;
 	private boolean isComplete = false;
 	
-	public CurrentBalance getBalance() {
-		return balance;
-	}
 	
 
 	public void transactionComplete() {
@@ -45,7 +42,15 @@ public class Transactions {
 			pw.print(itemName + " | ");
 			pw.print(itemLocation + " | ");
 			pw.print(getBalance() + " | ");
-			pw.print(getBalance(balance - itemPrice));
+			pw.println(balance - itemPrice);
+		}
+	}
+	public String feedMoney(double amount) {
+		if(amount == 1.00 || amount == 2.00 || amount == 5.00 || amount == 10.00) {
+			balance += amount;
+			return amount + " dollar(s) accepted.";
+		} else {
+			return "Amount not accepted. Please only feed whole dollar amounts into the vending machine.";
 		}
 	}
 }
