@@ -13,10 +13,10 @@ public class CurrentBalanceTest {
 	public void change_machine() {
 		//Arrange
 		CurrentBalance blanche = new CurrentBalance();
-		blanche.setBalance(2.14);
+		blanche.setBalance(2.50);
 		
 		//Act
-		String expected = ("2 dollars, 1 dime, 4 pennies");
+		String expected = ("2 dollars, 2 quarters");
 		
 		//Assert
 		Assert.assertEquals(expected, blanche.change());
