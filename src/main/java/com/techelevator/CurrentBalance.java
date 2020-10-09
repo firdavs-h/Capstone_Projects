@@ -47,10 +47,11 @@ public class CurrentBalance {
 		
 	
 			while(this.balance.compareTo(BigDecimal.ZERO) == 1) {
-				if(this.balance.compareTo(BigDecimal.ONE) >= 0) {
-					dollar++;
-					this.balance = this.balance.subtract(BigDecimal.ONE);
-				} else if(this.balance.compareTo(qCoin) >= 0) {
+			//	if(this.balance.compareTo(BigDecimal.ONE) >= 0) {
+					//dollar++;
+					//this.balance = this.balance.subtract(BigDecimal.ONE);
+				//} else 
+					if(this.balance.compareTo(qCoin) >= 0) {
 					quarter++;
 					this.balance = this.balance.subtract(qCoin);
 				} else if(this.balance.compareTo(dCoin) >= 0) {
@@ -70,7 +71,7 @@ public class CurrentBalance {
 		String changeDime = (dime == 0 ? "" : (dime > 1 ? ((String)(dime + " dimes")): ((String)(dime + " dime"))));
 		String changeNickel =(nickel == 0 ? "" : (nickel + " nickel"));
 		String changePenny = (penny == 0 ? "" : (penny > 1 ? ((String)(penny + " pennies")): ((String)(penny + " penny"))));
-		String changeDollarsCoins = (changeDollars + (quarter == 0 ? "" : ", ") + changeQuarter + (dime == 0 ? "" : ", ") + changeDime + (nickel == 0 ? "" : ", ") + changeNickel + (penny == 0 ? "" : ", ") + changePenny);
+		String changeDollarsCoins = (changeDollars + (quarter == 0 ? "" : "") + changeQuarter + (dime == 0 ? "" : ", ") + changeDime + (nickel == 0 ? "" : ", ") + changeNickel + (penny == 0 ? "" : ", ") + changePenny);
 		this.balance = BigDecimal.ZERO;
 		return changeDollarsCoins;
 	}
