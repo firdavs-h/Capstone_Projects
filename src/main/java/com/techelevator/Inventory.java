@@ -3,17 +3,16 @@ package com.techelevator;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.DecimalFormat;
-
+import java.util.ArrayList;
 import java.util.HashMap;
-
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-
 
 public class Inventory {
 
 	private Product product;
-
+	private List<String> keySetOrder = new ArrayList<String>();
 	private Map<String, Product> inventoryMap = new HashMap<String, Product>();
 
 	public Inventory() {
@@ -28,6 +27,7 @@ public class Inventory {
 				String[] temp = line.split("\\|");
 				product = new Product(temp[1], Double.parseDouble(temp[2]), temp[3]);
 				inventoryMap.put(temp[0], product);
+				keySetOrder.add(temp[0]);
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("Input file not found");
@@ -60,17 +60,17 @@ public class Inventory {
 	}
 
 	public void displayInventory() {
-		
-	
-		DecimalFormat df = new DecimalFormat("###.00");
-	
-		for (Map.Entry<String, Product> entry: inventoryMap.entrySet()) {
-		
 
-			System.out.println(entry.getKey()+"|"+entry.getValue().getProductName()+"|"+
-			df.format((double) entry.getValue().getProductPrice())+"|"+entry.getValue().getProductType()+"|"+
-			((entry.getValue().getProductQuantity()==0)? "Sold Out": entry.getValue().getProductQuantity()));
-			
+		DecimalFormat df = new DecimalFormat("###.00");
+
+		for (int i = 0; i < keySetOrder.size(); i++) {
+			String key = keySetOrder.get(i);
+
+			System.out.println(key + " | " + getName(key) + " | "
+					+ df.format((double) getPrice(key)) + " | "
+					+ getType(key) + " | "+ ((getQuantity(key)== 0) ? "Sold Out" : getQuantity(key)));
+		}
+
 //			Product i = inventoryMap.get(s);
 //			StringBuffer itemString = new StringBuffer();
 //			// itemString.append(i.getLocation() + " | ");
@@ -83,8 +83,6 @@ public class Inventory {
 //				itemString.append(i.getProductQuantity());
 //			}
 //			items.add(itemString.toString());
-		}
-		
 
 	}
 }

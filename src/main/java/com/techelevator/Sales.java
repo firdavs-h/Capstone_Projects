@@ -31,5 +31,13 @@ public class Sales {
 		}
 		
 	}
+	public void recordSale(String location, int qty ) {
+		
+		String name =currentInvetory.getName(location);
+		Double value =currentInvetory.getPrice(location)*qty;
+		
+		salesMap.put(name,value);
+		
+	}
 
 }
