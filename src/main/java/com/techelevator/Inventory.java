@@ -14,7 +14,7 @@ public class Inventory {
 
 	public Inventory() {
 
-		setInventory();
+		
 	}
 
 	public void setInventory() {

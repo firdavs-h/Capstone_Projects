@@ -14,6 +14,7 @@ public class InventoryTest {
 
 	@Test
 	public void mapkey_A2_returns_productName_Stackers() {
+		testInventory.setInventory();
 		String expected= "Stackers";
 		String actual= testInventory.getInventoryMap().get("A2").getProductName();
 		Assert.assertEquals(expected, actual);
