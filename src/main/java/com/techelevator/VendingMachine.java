@@ -46,7 +46,7 @@ public class VendingMachine {
 		
 	}
 	
-	public String mainManu() {
+	public String mainMenu() {
 		String input;
 		System.out.println("(1) Display Vending Machine Items\n" + 
 				"(2) Purchase\n" + 
@@ -61,5 +61,19 @@ public class VendingMachine {
 		}
 		return input;
 	}
-	
+	public String purchaseMenu() {
+		String input;
+		System.out.println("(1) Feed Money\n" + 
+				"(2) Select Product\n" + 
+				"(3) Finish Transaction");
+		input=myScan.nextLine();
+		boolean validInput=(input.equals("1")||input.equals("2")||input.equals("3"));
+		while(!validInput) {
+		
+			System.out.println("Please select 1, 2 or 3");
+			input=myScan.nextLine();
+			validInput=(input.equals("1")||input.equals("2")||input.equals("3"));
+		}
+		return input;
+	}
 }
