@@ -30,7 +30,7 @@ public class Transactions extends CurrentBalance {
 				System.out.println("Something went wrong");
 			}
 			try (PrintWriter pw = new PrintWriter(new FileWriter(transactionLog, true))) {
-				pw.println("DateTime  |Product|Slot|AmountAccepted|Balance");
+				pw.println("DateTime  \t|Product\t|Slot|AmountAccepted|Balance");
 
 			}
 
