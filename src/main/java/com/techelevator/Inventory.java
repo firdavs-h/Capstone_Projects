@@ -66,23 +66,10 @@ public class Inventory {
 		for (int i = 0; i < keySetOrder.size(); i++) {
 			String key = keySetOrder.get(i);
 
-			System.out.println(key + " | " + getName(key) + " | "
-					+ df.format((double) getPrice(key)) + " | "
-					+ getType(key) + " | "+ ((getQuantity(key)== 0) ? "Sold Out" : getQuantity(key)));
+			System.out.println(key + " | " + getName(key) + " | " + df.format((double) getPrice(key)) + " | "
+					+ getType(key) + " | " + ((getQuantity(key) == 0) ? "Sold Out" : getQuantity(key)));
 		}
 
-//			Product i = inventoryMap.get(s);
-//			StringBuffer itemString = new StringBuffer();
-//			// itemString.append(i.getLocation() + " | ");
-//			itemString.append(i.getProductName() + " | ");
-//			itemString.append("$" + df.format((double) i.getProductPrice()) + " | ");
-//			itemString.append(i.getProductType());
-//			if (i.getProductQuantity() == 0) {
-//				itemString.append("Sold out");
-//			} else {
-//				itemString.append(i.getProductQuantity());
-//			}
-//			items.add(itemString.toString());
-
 	}
+
 }

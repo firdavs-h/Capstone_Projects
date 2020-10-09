@@ -22,7 +22,7 @@ public class Transactions extends CurrentBalance {
 	}
 
 	public void printTransaction(String itemName, String itemLocation, int itemPrice) throws IOException {
-		File transactionLog = new File("transactionLogtxt");
+		File transactionLog = new File("Log.txt");
 		if (!transactionLog.exists()) {
 			try {
 				transactionLog.createNewFile();
@@ -30,7 +30,7 @@ public class Transactions extends CurrentBalance {
 				System.out.println("Something went wrong");
 			}
 			try (PrintWriter pw = new PrintWriter(new FileWriter(transactionLog, true))) {
-				pw.println("DateTime     |Product|Slot|AmountAccepted|Balance");
+				pw.println("DateTime  |Product|Slot|AmountAccepted|Balance");
 
 			}
 
