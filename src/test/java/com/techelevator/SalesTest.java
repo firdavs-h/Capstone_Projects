@@ -25,7 +25,7 @@ public class SalesTest {
 		testSales.setSales();
 		testSales.recordSale("A1");
 		Assert.assertEquals(3.05, testSales.getSalesMap().get("Potato Crisps"),0);
-		
+		testSales.printSales();
 	}
 
 }

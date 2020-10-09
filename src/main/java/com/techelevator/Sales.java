@@ -1,7 +1,11 @@
 package com.techelevator;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Sales extends Inventory {
 	
@@ -23,11 +27,18 @@ public class Sales extends Inventory {
 	}
 	
 	public void printSales() {
-		
+		File report = new File("Sales_report.txt");
+		if(report.exists()) {
+			report.delete();
+		}
+		try(FileWriter fileWrite =new FileWriter(report,true)){
 		for (String key: salesMap.keySet()) {
+			fileWrite.write(key+"|"+salesMap.get(key)+"\n");
+			//System.out.println(key+"|"+salesMap.get(key));
+		}
 			
-			System.out.println(key+"|"+salesMap.get(key));
-			
+		} catch (IOException e) {
+			System.out.println("Not able to write sales report file");
 		}
 		
 	}
