@@ -21,7 +21,7 @@ public class Transactions extends CurrentBalance {
 		return isComplete;
 	}
 
-	public void printTransaction(String itemName, String itemLocation, int itemPrice) throws IOException {
+	public void printTransaction(String itemName, String itemLocation, double itemPrice) throws IOException {
 		File transactionLog = new File("Log.txt");
 		if (!transactionLog.exists()) {
 			try {

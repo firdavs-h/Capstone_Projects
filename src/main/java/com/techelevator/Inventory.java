@@ -19,6 +19,8 @@ public class Inventory {
        setInventory();
 	}
 
+	
+
 	public void setInventory() {
 		File vendingFile = new File("vendingmachine.csv");
 		try (Scanner fileScanner = new Scanner(vendingFile)) {
@@ -57,6 +59,9 @@ public class Inventory {
 	public int getQuantity(String location) {
 		return inventoryMap.get(location).getProductQuantity();
 
+	}
+	public Product getProduct(String location) {
+		return inventoryMap.get(location);
 	}
 
 	public void displayInventory() {
