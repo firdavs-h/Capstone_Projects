@@ -71,8 +71,18 @@ public class CurrentBalance {
 		String changeDime = (dime == 0 ? "" : (dime > 1 ? ((String)(dime + " dimes")): ((String)(dime + " dime"))));
 		String changeNickel =(nickel == 0 ? "" : (nickel + " nickel"));
 		String changePenny = (penny == 0 ? "" : (penny > 1 ? ((String)(penny + " pennies")): ((String)(penny + " penny"))));
-		String changeDollarsCoins = (changeDollars + (quarter == 0 ? "" : "") + changeQuarter + (dime == 0 ? "" : ", ") + changeDime + (nickel == 0 ? "" : ", ") + changeNickel + (penny == 0 ? "" : ", ") + changePenny);
-		this.balance = BigDecimal.ZERO;
+		String changeDollarsCoins = null;
+		if(quarter == 0 && dime == 0 && nickel == 0) {
+			changeDollarsCoins = "You have no change.";
+		} else if (quarter == 0 && dime == 0) {
+			changeDollarsCoins = "1 nickel";
+		} else if(dime == 0 & nickel == 0) {
+			changeDollarsCoins = changeQuarter;
+		} else if(quarter == 0 && nickel == 0) {
+			changeDollarsCoins = changeDime;
+		} else {	changeDollarsCoins = changeQuarter + (quarter == 0 ? "" : ", ") + changeDime + (dime == 0 || nickel == 0 ? "" : ", ") + changeNickel + (nickel == 0  ? "" : "") + changePenny;
+		}
+				this.balance = BigDecimal.ZERO;
 		return changeDollarsCoins;
 	}
 	
