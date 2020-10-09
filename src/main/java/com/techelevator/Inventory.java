@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-
 public class Inventory {
 
 	private Product product;
@@ -60,17 +59,16 @@ public class Inventory {
 	}
 
 	public void displayInventory() {
-		
-	
-		DecimalFormat df = new DecimalFormat("###.00");
-	
-		for (Map.Entry<String, Product> entry: inventoryMap.entrySet()) {
-		
 
-			System.out.println(entry.getKey()+"|"+entry.getValue().getProductName()+"|"+
-			df.format((double) entry.getValue().getProductPrice())+"|"+entry.getValue().getProductType()+"|"+
-			((entry.getValue().getProductQuantity()==0)? "Sold Out": entry.getValue().getProductQuantity()));
-			
+		DecimalFormat df = new DecimalFormat("###.00");
+
+		for (Map.Entry<String, Product> entry : inventoryMap.entrySet()) {
+
+			System.out.println(entry.getKey() + "|" + entry.getValue().getProductName() + "|"
+					+ df.format((double) entry.getValue().getProductPrice()) + "|" + entry.getValue().getProductType()
+					+ "|" + ((entry.getValue().getProductQuantity() == 0) ? "Sold Out"
+							: entry.getValue().getProductQuantity()));
+
 //			Product i = inventoryMap.get(s);
 //			StringBuffer itemString = new StringBuffer();
 //			// itemString.append(i.getLocation() + " | ");
@@ -84,7 +82,6 @@ public class Inventory {
 //			}
 //			items.add(itemString.toString());
 		}
-		
 
 	}
 }
