@@ -21,7 +21,7 @@ public class Transactions extends CurrentBalance {
 		return isComplete;
 	}
 
-	public void printTransaction(String itemName, String itemLocation, double itemPrice) throws IOException {
+	public void printTransaction(String itemName, String itemLocation, double amount, double preBalance) throws IOException {
 		File transactionLog = new File("Log.txt");
 		if (!transactionLog.exists()) {
 			try {
@@ -41,8 +41,8 @@ public class Transactions extends CurrentBalance {
 			pw.print(formatter.format(dateTime) + " | ");
 			pw.print(itemName + " | ");
 			pw.print(itemLocation + " | ");
-			pw.print(getBalance() + " | ");
-			pw.println(getBalance() - itemPrice);
+			pw.print(preBalance + " | ");
+			pw.println(getBalance());
 		}
 	}
 	public String feedMoney(int amount) {
@@ -58,5 +58,6 @@ public class Transactions extends CurrentBalance {
 		setBalance(-1 * price);
 	}
 	
+
 	
 }
