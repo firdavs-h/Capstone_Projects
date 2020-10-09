@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Transactions extends CurrentBalance {
-	private int balance;
+	
 	private boolean isComplete = false;
 	
 	
@@ -47,8 +47,8 @@ public class Transactions extends CurrentBalance {
 	}
 	public String feedMoney(int amount) {
 		if(amount == 1.00 || amount == 2.00 || amount == 5.00 || amount == 10.00) {
-			balance += amount;
-			return amount + " dollar(s) accepted.";
+			setBalance(amount);
+			return amount + (amount > 1 ? " dollars" : " dollar") + " accepted";
 		} else {
 			return "Amount not accepted. Please only feed whole dollar amounts into the vending machine.";
 		}
