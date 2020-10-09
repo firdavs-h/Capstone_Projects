@@ -24,10 +24,25 @@ public class VendingMachine {
 	
 		
 	
-	public String purchase(CurrentBalance b, String location) {
-		return null;
-	}
-	public void printSalesReport() {
+	public String purchase(Transactions t, String location) throws IOException {
+		System.out.println(location);
+		Product updateQuantity = (Product) itemList.values();
+		Inventory currentItem = itemList.get(location);
+		if(currentItem.getQuantity(location) == 0) {
+			return "There are no more left.";
+		}
+		if(currentItem.getPrice(location) < t.getBalance()) {
+			t.printTransaction(currentItem.getName(location), location, (int) currentItem.getPrice(location));  
+				updateQuantity.dispense(1);
+				totalSales += currentItem.getPrice(location);
+				return "You have purchased 1 " + currentItem.getName(location) + ".";
+			
+		} else {
+			return "The cost of this item exceeds your current balance";
+		}
+		
+		
 		
 	}
+	
 }

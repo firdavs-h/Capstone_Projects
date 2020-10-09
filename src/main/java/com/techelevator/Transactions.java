@@ -45,7 +45,7 @@ public class Transactions extends CurrentBalance {
 			pw.println(balance - itemPrice);
 		}
 	}
-	public String feedMoney(double amount) {
+	public String feedMoney(int amount) {
 		if(amount == 1.00 || amount == 2.00 || amount == 5.00 || amount == 10.00) {
 			balance += amount;
 			return amount + " dollar(s) accepted.";
