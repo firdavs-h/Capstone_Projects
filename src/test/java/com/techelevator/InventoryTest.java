@@ -1,5 +1,8 @@
 package com.techelevator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -17,6 +20,16 @@ public class InventoryTest {
 		testInventory.setInventory();
 		String expected= "Stackers";
 		String actual= testInventory.getInventoryMap().get("A2").getProductName();
+		Assert.assertEquals(expected, actual);
+		
+	}
+	@Test
+	public void display_items_is_properly_displayed() {
+		Inventory vending = new Inventory();
+		List<String> expected = new ArrayList<>();
+		expected.add("A1|Potato Crisps|3.05|Chip");
+		expected.add("B1|Stackers|1.45|Chip");
+		List<String> actual = vending.displayInventory();
 		Assert.assertEquals(expected, actual);
 		
 	}

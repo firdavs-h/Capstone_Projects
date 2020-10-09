@@ -18,7 +18,6 @@ public class Inventory {
 
 	public Inventory() {
 
-		
 	}
 
 	public void setInventory() {
@@ -39,22 +38,46 @@ public class Inventory {
 	public Map<String, Product> getInventoryMap() {
 		return inventoryMap;
 	}
+
 	public String getName(String location) {
 		return inventoryMap.get(location).getProductName();
-		
+
 	}
+
 	public double getPrice(String location) {
 		return inventoryMap.get(location).getProductPrice();
-		
+
 	}
+
 	public String getType(String location) {
 		return inventoryMap.get(location).getProductType();
-		
+
 	}
+
 	public int getQuantity(String location) {
 		return inventoryMap.get(location).getProductQuantity();
-		
+
 	}
 
+	public List<String> displayInventory() {
+		List<String> items = new ArrayList<>();
+		Set<String> itemKeys = inventoryMap.keySet();
+		DecimalFormat df = new DecimalFormat("###.00");
+		for (String s : itemKeys) {
+			Product i = inventoryMap.get(s);
+			StringBuffer itemString = new StringBuffer();
+			// itemString.append(i.getLocation() + " | ");
+			itemString.append(i.getProductName() + " | ");
+			itemString.append("$" + df.format((double) i.getProductPrice()) + " | ");
+			itemString.append(i.getProductType());
+			if (i.getProductQuantity() == 0) {
+				itemString.append("Sold out");
+			} else {
+				itemString.append(i.getProductQuantity());
+			}
+			items.add(itemString.toString());
+		}
+		return items;
 
+	}
 }

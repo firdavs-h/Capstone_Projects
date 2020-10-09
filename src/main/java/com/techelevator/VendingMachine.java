@@ -21,24 +21,7 @@ public class VendingMachine {
 	}
 
 
-	public List<String> displayInventory() {
-		List<String> items = new ArrayList<>();
-		Set<String> itemKeys = itemList.keySet();
-		DecimalFormat df = new DecimalFormat("###.00");
-		for(String s : itemKeys) {
-			Inventory i = itemList.get(s);
-			StringBuffer itemString = new StringBuffer();
-			//itemString.append(i.getLocation() + " | ");
-			itemString.append(i.getName(s) + " | ");
-			itemString.append("$" + df.format((double)i.getPrice(s)) + " | ");
-			itemString.append(i.getType(s));
-			if(i.getQuantity(s) == 0) {
-				itemString.append("Sold out");
-			} else {
-				itemString.append(i.getQuantity(s));
-			} items.add(itemString.toString());
-		}
-		return items;
+	
 		
 	} 
 	public String purchase(CurrentBalance b, String location) {
