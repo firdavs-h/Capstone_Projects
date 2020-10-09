@@ -38,8 +38,8 @@ public class VendingMachine {
 		}
 		if(inventory.getPrice(location) <= balance.getBalance()) {
 			inventory.getProduct(location).dispense();
-			log.printTransaction(inventory.getName(location), location,  inventory.getPrice(location), preBalance);  
 			balance.payment(inventory.getPrice(location));
+			log.printTransaction(inventory.getName(location), location, balance.displayBalance(), preBalance);  
 			inventory.recordSale(location);
 				return "You have purchased 1 " + inventory.getName(location) + flavorText(location);
 				
@@ -99,14 +99,14 @@ public class VendingMachine {
 		String input = myScan.nextLine();
 		int output = Integer.parseInt(input);
 		balance.feedMoney(output);
-		log.printTransaction("FEED", " MONEY", balance.getBalance(), preBalance); 
+		log.printTransaction("FEED", " MONEY: ", balance.displayBalance() , preBalance); 
 		
 	}
 	
 	public void changeMachine() throws IOException {
 		double preBalance = balance.getBalance();
 		System.out.println("Your change is: " + balance.change() + "\n Your current balance is: " + balance.displayBalance());
-		log.printTransaction("GIVE", " CHANGE", balance.getBalance(), preBalance);
+		log.printTransaction("GIVE", " CHANGE: ", balance.displayBalance(), preBalance);
 	}
 	
 	public void reportDatSales() {
