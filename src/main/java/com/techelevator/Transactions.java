@@ -30,7 +30,7 @@ public class Transactions extends CurrentBalance {
 				System.out.println("Something went wrong");
 			}
 			try (PrintWriter pw = new PrintWriter(new FileWriter(transactionLog, true))) {
-				pw.println("DateTime  |Slot|Product|AmountAccepted|Balance");
+				pw.println("DateTime  |Product|Slot|AmountAccepted|Balance");
 
 			}
 
@@ -39,8 +39,8 @@ public class Transactions extends CurrentBalance {
 			LocalDateTime dateTime = LocalDateTime.now();
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-uuuu hh:mm a");
 			pw.print(formatter.format(dateTime) + " | ");
-			pw.print(itemLocation + " | ");
 			pw.print(itemName + " | ");
+			pw.print(itemLocation + " | ");
 			pw.print(getBalance() + " | ");
 			pw.println(balance - itemPrice);
 		}
