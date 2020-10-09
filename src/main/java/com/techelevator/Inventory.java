@@ -3,12 +3,12 @@ package com.techelevator;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
+
 import java.util.HashMap;
-import java.util.List;
+
 import java.util.Map;
 import java.util.Scanner;
-import java.util.Set;
+
 
 public class Inventory {
 
@@ -59,25 +59,32 @@ public class Inventory {
 
 	}
 
-	public List<String> displayInventory() {
-		List<String> items = new ArrayList<>();
-		Set<String> itemKeys = inventoryMap.keySet();
+	public void displayInventory() {
+		
+	
 		DecimalFormat df = new DecimalFormat("###.00");
-		for (String s : itemKeys) {
-			Product i = inventoryMap.get(s);
-			StringBuffer itemString = new StringBuffer();
-			// itemString.append(i.getLocation() + " | ");
-			itemString.append(i.getProductName() + " | ");
-			itemString.append("$" + df.format((double) i.getProductPrice()) + " | ");
-			itemString.append(i.getProductType());
-			if (i.getProductQuantity() == 0) {
-				itemString.append("Sold out");
-			} else {
-				itemString.append(i.getProductQuantity());
-			}
-			items.add(itemString.toString());
+	
+		for (Map.Entry<String, Product> entry: inventoryMap.entrySet()) {
+		
+
+			System.out.println(entry.getKey()+"|"+entry.getValue().getProductName()+"|"+
+			df.format((double) entry.getValue().getProductPrice())+"|"+entry.getValue().getProductType()+"|"+
+			((entry.getValue().getProductQuantity()==0)? "Sold Out": entry.getValue().getProductQuantity()));
+			
+//			Product i = inventoryMap.get(s);
+//			StringBuffer itemString = new StringBuffer();
+//			// itemString.append(i.getLocation() + " | ");
+//			itemString.append(i.getProductName() + " | ");
+//			itemString.append("$" + df.format((double) i.getProductPrice()) + " | ");
+//			itemString.append(i.getProductType());
+//			if (i.getProductQuantity() == 0) {
+//				itemString.append("Sold out");
+//			} else {
+//				itemString.append(i.getProductQuantity());
+//			}
+//			items.add(itemString.toString());
 		}
-		return items;
+		
 
 	}
 }

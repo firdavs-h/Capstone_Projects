@@ -26,7 +26,7 @@ public class Sales {
 		
 		for (Map.Entry<String, Double> entry: salesMap.entrySet()) {
 			
-			System.out.println(entry.getKey());
+			System.out.println(entry.getKey()+"|"+entry.getValue());
 			
 		}
 		
