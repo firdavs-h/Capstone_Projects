@@ -38,8 +38,9 @@ public class Product {
 		if(quantity>0) {
 		this.quantity--;
 		}else {
-			System.out.println("Not enough quatity left");
+			System.out.println("Not enough quantity left");
 		}
+	
 	}
-      
+
 }

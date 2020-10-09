@@ -41,7 +41,7 @@ public class VendingMachine {
 			log.printTransaction(inventory.getName(location), location,  inventory.getPrice(location), preBalance);  
 			balance.payment(inventory.getPrice(location));
 			inventory.recordSale(location);
-				return "You have purchased 1 " + inventory.getName(location) + ".";
+				return "You have purchased 1 " + inventory.getName(location) + flavorText(location);
 				
 		} else {
 			return "The cost of this item exceeds your current balance";
@@ -51,6 +51,12 @@ public class VendingMachine {
 		
 	}
 	
+	
+
+
+
+
+
 	public String mainMenu() {
 		String input;
 		System.out.println("(1) Display Vending Machine Items\n" + 
@@ -105,5 +111,17 @@ public class VendingMachine {
 	
 	public void reportDatSales() {
 		inventory.printSales();
+	}
+	public String flavorText(String location) {
+		if(inventory.getType(location).equals("Chip")) {
+			return ". Crunch Crunch, Yum!";
+		} else if(inventory.getType(location).equals("Candy")) {
+			return ". Munch Munch, Yum!";
+		} else if(inventory.getType(location).equals("Drink")) {
+			return ". Glug Glug, Yum!";
+		} else if (inventory.getType(location).equals("Gum")) {
+			return ". Chew Chew, Yum!";
+		}
+		return null;
 	}
 }

@@ -36,6 +36,8 @@ public class Inventory {
 		}
 
 	}
+	
+      
 
 	public Map<String, Product> getInventoryMap() {
 		return inventoryMap;
@@ -76,5 +78,6 @@ public class Inventory {
 		}
 
 	}
+	
 
 }
