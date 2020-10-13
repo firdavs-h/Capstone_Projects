@@ -22,6 +22,7 @@ public class Main {
 					if(purchaseInput.equals("1")) {
 						run.feedMoneyExt();
 					} else if(purchaseInput.equals("2")) {
+						run.displayMenu();
 						System.out.println(run.purchase());
 					} else if(purchaseInput.equals("3")) {
 						run.changeMachine();

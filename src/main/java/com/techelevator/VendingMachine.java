@@ -82,7 +82,7 @@ public class VendingMachine {
 		System.out.println("Enter bills: ");
 		String input = myScan.nextLine();
 		int output = Integer.parseInt(input);
-		balance.feedMoney(output);
+		System.out.println(balance.feedMoney(output));
 		log.printTransaction("FEED", " MONEY: ", balance.displayBalance(), preBalance);
 
 	}

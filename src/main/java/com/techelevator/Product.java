@@ -32,8 +32,6 @@ public class Product {
 		return quantity;
 	}
 	
-	//setters
-	
 	public void dispense() {
 		if(quantity>0) {
 		this.quantity--;
